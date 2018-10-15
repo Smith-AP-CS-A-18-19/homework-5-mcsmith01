@@ -3,8 +3,13 @@ public class Homework5 {
 	/* Finish the constructor and create any necessary instance
 	 * variables
 	 */
+	private String str;
+	private int aa;
+	private int bb;
 	public Homework5(String s, int a, int b) {
-
+		str = s;
+		aa = a;
+		bb = b;
 	}
 
 	/* Return a substring of the stored String, starting at index with
@@ -16,7 +21,11 @@ public class Homework5 {
 	 * substring method in the String class
 	 */
 	public String substring(int index, int length) {
-
+		if (index + length >= str.length()) {
+			return str.substring(index);
+		} else {
+			return str.substring(index, index + length);
+		}
 	}
 
 	/* Return true if the stored String contains the provided String,
@@ -25,13 +34,17 @@ public class Homework5 {
 	 * an example
 	 */
 	public boolean contains(String s) {
-		
+		return str.indexOf(s) >= 0;
 	}
 
 	/* Return the larger of the two stored numbers
 	 */
-	public static int max() {
-
+	public int max() {
+		if (aa > bb) {
+			return aa;
+		} else {
+			return bb;
+		}
 	}
 
 	public static void main(String[] args) {
